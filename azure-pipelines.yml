@@ -4,10 +4,16 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+ branches:
+   include:
+     - master
 
 pool:
   vmImage: ubuntu-latest
+
+variables:
+ buildPlatform: 'Any CPU'
+ buildConfiguration: 'Release'
 
 steps:
 - script: echo Hello, world!
