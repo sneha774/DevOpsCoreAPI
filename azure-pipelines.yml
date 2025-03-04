@@ -14,6 +14,8 @@ pool:
 variables:
  buildPlatform: 'Any CPU'
  buildConfiguration: 'Release'
+ solution: '**/CoreAPI.sln'
+ project: '**/CoreAPI/CoreAPI.csproj'
 
 steps:
 - script: echo Hello, world!
