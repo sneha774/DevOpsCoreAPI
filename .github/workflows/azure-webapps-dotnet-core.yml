@@ -45,7 +45,7 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Set up dependency caching for faster builds
-        run: echo "Build Stage"
+        run: echo "Build the application using .net core version ${{ vars.DOTNETVERSION }}"
 
   deployDev:
     name: Deploy to Dev
@@ -58,8 +58,8 @@ jobs:
       url: "http://www.dev.vloopllc.com"
 
     steps:
-      - name: Deploy to ${{ env.ENVIRONMENTNAME }} Environment
-        run: echo "Deploy to ${{ env.ENVIRONMENTNAME }} Environment"
+      - name: Deploy to ${{ vars.ENVIRONMENTNAME }} Environment
+        run: echo "Deploy to ${{ vars.ENVIRONMENTNAME }} Environment"
 
         
 
@@ -75,4 +75,4 @@ jobs:
 
       steps:
         - name: Deploy to ${{ vars.ENVIRONMENTNAME }} Environment
-          run: echo "Deploy to  ${{ vars.ENVIRONMENTNAME }} Environment"
+          run: echo "Deploy to ${{ vars.ENVIRONMENTNAME }} Environment"
