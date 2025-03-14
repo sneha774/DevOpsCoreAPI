@@ -74,5 +74,5 @@ jobs:
         url: "http://www.prod.vloopllc.com"
 
       steps:
-        - name: Deploy to ${{ env.ENVIRONMENTNAME }} Environment
-          run: echo "Deploy to  ${{ env.ENVIRONMENTNAME }} Environment"
+        - name: Deploy to ${{ vars.ENVIRONMENTNAME }} Environment
+          run: echo "Deploy to  ${{ vars.ENVIRONMENTNAME }} Environment"
