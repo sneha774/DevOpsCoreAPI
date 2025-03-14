@@ -17,7 +17,7 @@
 # For more information on the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
 
-name: Build and deploy ASP.Net Core app to an Azure Web App
+name: Demo CI/CD to Dev/Prod
 
 env:
   AZURE_WEBAPP_NAME: your-app-name    # set this to the name of your Azure Web App
@@ -48,28 +48,28 @@ jobs:
         run: echo "Build Stage"
 
   deployDev:
-    name: Depoy to Dev
+    name: Deploy to Dev
     permissions:
       contents: none
     runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Dev'
-      url: "www.dev.vloopllc.com"
+      url: "http://www.dev.vloopllc.com"
 
     steps:
       - name: Deploy to Dev Stage
         run: echo "Deploy to Dev Stage"
 
   deployProd:
-      name: Depoy to Prod
+      name: Deploy to Prod
       permissions:
         contents: none
       runs-on: ubuntu-latest
       needs: build
       environment:
         name: 'Prod'
-        url: "www.prod.vloopllc.com"
+        url: "http://www.prod.vloopllc.com"
 
       steps:
         - name: Deploy to Prod Stage
